@@ -4,7 +4,8 @@ const app = express();
 app.set('port', process.env.PORT | 8080);
 
 app.get('/', (req, res, next) => {
-  res.send(JSON.stringify(process.env, 2));
+  console.log('received GET /');
+  res.send(process.env.HOSTNAME);
 });
 
 app.listen(app.get('port'), (err) => {
